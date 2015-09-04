@@ -1,11 +1,11 @@
-![](https://raw.githubusercontent.com/poulfoged/pdf-extract/master/logo.png) &nbsp; ![](https://ci.appveyor.com/api/projects/status/prwp3j290469ntpb/branch/master?svg=true) &nbsp; ![](http://img.shields.io/nuget/v/pdf-extract.svg?style=flat)
+![](https://raw.githubusercontent.com/poulfoged/pdf-extract/master/logo.png) &nbsp; ![](https://ci.appveyor.com/api/projects/status//branch/master?svg=true) &nbsp; ![](http://img.shields.io/nuget/v/pdf-extract.svg?style=flat)
 #PDF Extract  
 
 As part of integration-testing I needed to extract text from PDF's - all existing solutions was either too cumbersome or had a wierd API.
 
 PDF Extract works by executing an external executable (Win64 only!) - but is fully self-contained and only exposes streams to the outside world.
 
-Internally it uses [Xpdf][http://www.foolabs.com/xpdf] internally. 
+Internally it uses [Xpdf](http://www.foolabs.com/xpdf). 
 
 ## How to
 To use extract text simply use provided extractor-class (here from a file):
