@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>pdf-extract</id>
+    <version>$version$</version>
+    <title>PDF Extract</title>
+    <authors>Monzoom (Poul Foged)</authors>
+    <owners>Monzoom (Poul Foged)</owners>
+    <projectUrl>https://github.com/poulfoged/pdf-extract</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/poulfoged/pdf-extract/master/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extract text from PDF's using streams.</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>pdf, stream, xpdf, extract, text</tags>
+    <releaseNotes>
+1.0.0.0 Initial release
+    </releaseNotes>
+  </metadata>
+</package>
