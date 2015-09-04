@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/poulfoged/pdf-extract/master/logo.png) &nbsp; ![](https://ci.appveyor.com/api/projects/status//branch/master?svg=true) &nbsp; ![](http://img.shields.io/nuget/v/pdf-extract.svg?style=flat)
+![](https://raw.githubusercontent.com/poulfoged/pdf-extract/master/icon.png) &nbsp; ![](https://ci.appveyor.com/api/projects/status//branch/master?svg=true) &nbsp; ![](http://img.shields.io/nuget/v/pdf-extract.svg?style=flat)
 #PDF Extract  
 
 As part of integration-testing I needed to extract text from PDF's - all existing solutions was either too cumbersome or had a wierd API.
