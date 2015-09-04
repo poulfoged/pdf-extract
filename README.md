@@ -11,10 +11,10 @@ Internally it uses [Xpdf](http://www.foolabs.com/xpdf).
 To use extract text simply use provided extractor-class (here from a file):
 
 ```c#
-using (var pdf = File.OpenRead("my.pdf"))
+using (var pdfStream = File.OpenRead("my.pdf"))
 using (var extractor = new Extractor())
 {
-    var extractedText = extractor.ExtractToString();
+    var extractedText = extractor.ExtractToString(pdfStream);
 }
 
 ```
