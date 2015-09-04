@@ -33,11 +33,11 @@ using (var extractor = new Extractor())
 
 Simply add the Nuget package:
 
-`PM> Install-Package elasticsearch-inside`
+`PM> Install-Package pdf-extract`
 
 ## Requirements
 
-You'll need .NET Framework 4.5.1 or later to use the precompiled binaries.
+You'll need .NET Framework 4.5.1 or later on 64 bit Windows to use the precompiled binaries.
 
 ## License
 
