@@ -70,11 +70,12 @@ namespace PdfExtract
         /// Extracts text from the provided stream - stream must be readable
         /// </summary>
         /// <param name="pdfStream">Stream to extract to</param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public string ExtractToString(Stream pdfStream)
+        public string ExtractToString(Stream pdfStream, Encoding encoding = null)
         {
             using (var textStream = ExtractText(pdfStream))
-            using (var reader = new StreamReader(textStream))
+            using (var reader = new StreamReader(textStream, encoding ?? Encoding.UTF8))
                 return reader.ReadToEnd();
         }
 
