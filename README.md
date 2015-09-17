@@ -8,7 +8,7 @@ PDF Extract works by executing an external executable (Win64 only!) - but is ful
 Internally it uses [Xpdf](http://www.foolabs.com/xpdf). 
 
 ## How to
-To use extract text simply use provided extractor-class (here from a file):
+To extract text simply use provided extractor-class (here from a file):
 
 ```c#
 using (var pdfStream = File.OpenRead("my.pdf"))
