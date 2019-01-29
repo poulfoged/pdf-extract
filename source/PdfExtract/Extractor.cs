@@ -27,6 +27,17 @@ namespace PdfExtract
         /// <returns></returns>
         public Stream ExtractText(Stream pdfStream)
         {
+            return ExtractText(pdfStream, null);
+        }
+
+        /// <summary>
+        /// Extracts text from the provided stream - stream must be readable
+        /// </summary>
+        /// <param name="pdfStream">Stream to extract to</param>
+        /// <param name="extraArgs">Way to add pdftotext.exe argument, ie. -table. See https://www.xpdfreader.com/pdftotext-man.html</param>
+        /// <returns></returns>
+        public Stream ExtractText(Stream pdfStream, string extraArgs)
+        {
             if (_disposed)
                 throw new ObjectDisposedException("Extractor");
 
@@ -43,7 +54,7 @@ namespace PdfExtract
                 var processStartInfo = new ProcessStartInfo(" \"" + _pdfToTextExecutable.Value.Info.FullName + " \"")
                 {
                     UseShellExecute = false,
-                    Arguments = " \"" + sourceFile.Info + "\" \"" + destinationFile.Info + "\"",
+                    Arguments = (extraArgs ?? "") + " \"" + sourceFile.Info + "\" \"" + destinationFile.Info + "\"",
                     WindowStyle = ProcessWindowStyle.Maximized,
                     CreateNoWindow = true,
                     LoadUserProfile = false,
@@ -53,11 +64,13 @@ namespace PdfExtract
                 };
 
 
-                using (var process = Process.Start(processStartInfo))
+                using (var process = new Process() { StartInfo = processStartInfo, EnableRaisingEvents = true })
                 {
                     process.ErrorDataReceived += (sender, eventargs) => Log(eventargs.Data);
                     process.OutputDataReceived += (sender, eventargs) => Log(eventargs.Data);
+                    process.Start();
                     process.BeginOutputReadLine();
+                    string error = process.StandardError.ReadToEnd(); //need to read error, else process waits forever for an exit when errors occur.
                     process.WaitForExit();
                 }
 
